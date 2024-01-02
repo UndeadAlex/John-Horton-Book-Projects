@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFML-Timber", "SFML-Timber\SFML-Timber.vcxproj", "{6C4C9EF4-B0B1-44D4-8673-AFF9D89F46E6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFML-Timber", "SFML-Timber\SFML-Timber.vcxproj", "{650333FC-FBA1-4F30-9539-3152C692F781}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFML-Pong", "SFML-Pong\SFML-Pong.vcxproj", "{5621F945-4C9B-4C04-8DE9-6C46FA9FCB1B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFML-ZombieArena", "SFML-ZombieArena\SFML-ZombieArena.vcxproj", "{0A177250-CEEB-4289-87B1-804EA1EDD932}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFML-ThomasWasLate", "SFML-ThomasWasLate\SFML-ThomasWasLate.vcxproj", "{4926A610-31B5-4D8A-B56D-AB7E36E2D833}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFML-SpaceInvaders", "SFML-SpaceInvaders\SFML-SpaceInvaders.vcxproj", "{127980AF-0043-42AA-839B-768F585DEB90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,26 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6C4C9EF4-B0B1-44D4-8673-AFF9D89F46E6}.Debug|x64.ActiveCfg = Debug|x64
-		{6C4C9EF4-B0B1-44D4-8673-AFF9D89F46E6}.Debug|x64.Build.0 = Debug|x64
-		{6C4C9EF4-B0B1-44D4-8673-AFF9D89F46E6}.Release|x64.ActiveCfg = Release|x64
-		{6C4C9EF4-B0B1-44D4-8673-AFF9D89F46E6}.Release|x64.Build.0 = Release|x64
+		{650333FC-FBA1-4F30-9539-3152C692F781}.Debug|x64.ActiveCfg = Debug|x64
+		{650333FC-FBA1-4F30-9539-3152C692F781}.Debug|x64.Build.0 = Debug|x64
+		{650333FC-FBA1-4F30-9539-3152C692F781}.Release|x64.ActiveCfg = Release|x64
+		{650333FC-FBA1-4F30-9539-3152C692F781}.Release|x64.Build.0 = Release|x64
+		{5621F945-4C9B-4C04-8DE9-6C46FA9FCB1B}.Debug|x64.ActiveCfg = Debug|x64
+		{5621F945-4C9B-4C04-8DE9-6C46FA9FCB1B}.Debug|x64.Build.0 = Debug|x64
+		{5621F945-4C9B-4C04-8DE9-6C46FA9FCB1B}.Release|x64.ActiveCfg = Release|x64
+		{5621F945-4C9B-4C04-8DE9-6C46FA9FCB1B}.Release|x64.Build.0 = Release|x64
+		{0A177250-CEEB-4289-87B1-804EA1EDD932}.Debug|x64.ActiveCfg = Debug|x64
+		{0A177250-CEEB-4289-87B1-804EA1EDD932}.Debug|x64.Build.0 = Debug|x64
+		{0A177250-CEEB-4289-87B1-804EA1EDD932}.Release|x64.ActiveCfg = Release|x64
+		{0A177250-CEEB-4289-87B1-804EA1EDD932}.Release|x64.Build.0 = Release|x64
+		{4926A610-31B5-4D8A-B56D-AB7E36E2D833}.Debug|x64.ActiveCfg = Debug|x64
+		{4926A610-31B5-4D8A-B56D-AB7E36E2D833}.Debug|x64.Build.0 = Debug|x64
+		{4926A610-31B5-4D8A-B56D-AB7E36E2D833}.Release|x64.ActiveCfg = Release|x64
+		{4926A610-31B5-4D8A-B56D-AB7E36E2D833}.Release|x64.Build.0 = Release|x64
+		{127980AF-0043-42AA-839B-768F585DEB90}.Debug|x64.ActiveCfg = Debug|x64
+		{127980AF-0043-42AA-839B-768F585DEB90}.Debug|x64.Build.0 = Debug|x64
+		{127980AF-0043-42AA-839B-768F585DEB90}.Release|x64.ActiveCfg = Release|x64
+		{127980AF-0043-42AA-839B-768F585DEB90}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
