@@ -224,27 +224,6 @@ int WinMain()
 
 	bool acceptInput = false;
 
-	//// Choppy
-	//SoundBuffer chopBuffer;
-	//chopBuffer.loadFromFile("assets/sounds/chop.wav");
-	//Sound chopAudio;
-	//chopAudio.setVolume(25);
-	//chopAudio.setBuffer(chopBuffer);
-
-	//// Squishy
-	//SoundBuffer deathBuffer;
-	//deathBuffer.loadFromFile("assets/sounds/death.wav");
-	//Sound deathAudio;
-	//deathAudio.setVolume(25);
-	//deathAudio.setBuffer(deathBuffer);
-
-	//// Out of time
-	//SoundBuffer ootBuffer;
-	//ootBuffer.loadFromFile("assets/sounds/out_of_time.wav");
-	//Sound outOfTime;
-	//outOfTime.setVolume(25);
-	//outOfTime.setBuffer(ootBuffer);
-
 	UpdateBranches(0, branchPositions);
 
 	// start the game loop
