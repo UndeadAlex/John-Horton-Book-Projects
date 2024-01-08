@@ -6,9 +6,9 @@
 
 namespace GameConstants
 {
-	// Its important for easiness to keep this as a 1:1 aspect ratio.
-	constexpr int gWindowWidth = 1920;
-	constexpr int gWindowHeight = 1080;
+	constexpr int WINDOW_WIDTH = 1920;
+	constexpr int WINDOW_HEIGHT = 1080;
+
 
 	// set the origin of the text to the centre of it
 	static void centreTextOrigin(sf::Text& pText)

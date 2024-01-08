@@ -1,14 +1,14 @@
 //////////////////////////////////////////////////////////////////////////
 ///
-///				WELCOME TO THE FIRST PROJECT IN
-///				JOHN HORTON'S BEGINNER GAME PROGRAMMING BOOK
+///		WELCOME TO THE FIRST PROJECT IN
+///		JOHN HORTON'S BEGINNER GAME PROGRAMMING BOOK
 /// 
-///				These are not designed to be the exact same as
-///				what is shown in the book, i have re factored 
-///				specific areas i thought might need as such.
+///		These are not designed to be the exact same as
+///		what is shown in the book, i have re factored 
+///		specific areas i thought might need as such.
 /// 
-///				e.g. the original book keeps code in a single .cpp file.
-///				i chose to use classes where i thought they made sense.
+///		e.g. the original book keeps code in a single .cpp file.
+///		i chose to use classes where i thought they made sense.
 /// 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -27,13 +27,10 @@
 #include "Cloud.h"
 
 
+// Basic state system for the game.
+enum GameState { START = 0, PLAYING = 1, END = 2 };
 
-enum GameState {
-	START = 0,
-	PLAYING = 1,
-	END = 2,
-};
-
+// Should be probably called Side or a more generic version as the player uses this too
 enum class BranchSide{ LEFT, RIGHT, NONE };
 
 constexpr int NUM_BRANCHES = 6;
@@ -74,6 +71,7 @@ std::string enum_to_string(BranchSide t) {
 	}
 }
 
+// Looks messy :( but its the method i found for using the windows subsystem in release builds.
 #if _DEBUG // If Debug Config, use console subsystem
 int main()
 #else // If Release Config, use windows subsystem
@@ -470,7 +468,9 @@ int WinMain()
 
 				mainWindow.draw(scoreText);
 				mainWindow.draw(timeBar);
+#if _DEBUG
 				mainWindow.draw(debugText);
+#endif
 				break;
 			}
 			case END:

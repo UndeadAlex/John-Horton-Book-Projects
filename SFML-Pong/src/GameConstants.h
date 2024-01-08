@@ -6,29 +6,27 @@
 
 namespace GameConstants
 {
-	// Its important for easiness to keep this as a 1:1 aspect ratio.
-	constexpr int gWindowWidth = 1024;
-	constexpr int gWindowHeight = 1024;
+	constexpr int WINDOW_WIDTH = 1920;
+	constexpr int WINDOW_HEIGHT = 1080;
 
-	constexpr int CELL_RES = 8;
-	constexpr int CELL_SIZE = std::min(gWindowWidth, gWindowHeight) / CELL_RES;
+	constexpr float PADDLE_SPEED = 350.0f;
+	constexpr float BALL_X_SPEED = 350.0f;
+	constexpr float BALL_Y_SPEED = 50.0f;
+
+	static sf::Vector2f GetWindowCentre()
+	{
+		return sf::Vector2f(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+	}
 
 	// set the origin of the text to the centre of it
-	static void centreTextOrigin(sf::Text& pText)
+	static void CentreTextOrigin(sf::Text& pText)
 	{
 		pText.setOrigin(pText.getGlobalBounds().width / 2, 0);
 	}
 
-	static sf::Vector2f roundVector2f(const sf::Vector2f pVector2f)
+	static sf::Vector2f RoundVector2f(const sf::Vector2f pVector2f)
 	{
 		return sf::Vector2f(std::round(pVector2f.x), std::round(pVector2f.y));
-	}
-
-	static sf::Font getFFFForwardFont()
-	{
-		sf::Font font;
-		font.loadFromFile("assets/fonts/FFFFORWA.TTF");
-		return font;
 	}
 }
 

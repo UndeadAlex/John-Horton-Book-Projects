@@ -88,9 +88,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Ball.cpp" />
+    <ClCompile Include="src\Bat.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Ball.h" />
+    <ClInclude Include="src\Bat.h" />
     <ClInclude Include="src\GameConstants.h" />
     <ClInclude Include="src\GameRandom.h" />
   </ItemGroup>
