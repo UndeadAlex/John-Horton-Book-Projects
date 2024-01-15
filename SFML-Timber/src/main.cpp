@@ -81,7 +81,7 @@ int WinMain()
 	using namespace sf;
 
 	// create the main window, prevent it from being resized
-	RenderWindow mainWindow(VideoMode(GameConstants::gWindowWidth, GameConstants::gWindowHeight), "Timmmmmberrrrr!", sf::Style::Titlebar | sf::Style::Close);
+	RenderWindow mainWindow(VideoMode(GameConstants::WINDOW_WIDTH, GameConstants::WINDOW_HEIGHT), "Timmmmmberrrrr!", sf::Style::Titlebar | sf::Style::Close);
 	mainWindow.setFramerateLimit(144);
 
 	// clock for timing
@@ -151,7 +151,7 @@ int WinMain()
 	debugText.setCharacterSize(50);
 	debugText.setFillColor(Color::White);
 	debugText.setOrigin(debugText.getLocalBounds().width, 0);
-	debugText.setPosition(GameConstants::gWindowWidth, 0);
+	debugText.setPosition(GameConstants::WINDOW_WIDTH, 0);
 #endif
 
 	// Position the text
@@ -392,7 +392,7 @@ int WinMain()
 
 					messageText.setString("SQUISHED!!");
 					GameConstants::centreTextOrigin(messageText);
-					messageText.setPosition(GameConstants::gWindowWidth / 2, GameConstants::gWindowHeight / 2);
+					messageText.setPosition(GameConstants::WINDOW_WIDTH / 2, GameConstants::WINDOW_HEIGHT / 2);
 
 					AudioManager::GetAudio("death")->play();
 				}
@@ -405,7 +405,7 @@ int WinMain()
 				}
 				debugText.setString(debugStream.str());
 				debugText.setOrigin(debugText.getLocalBounds().width, 0);
-				debugText.setPosition(GameConstants::gWindowWidth,0);
+				debugText.setPosition(GameConstants::WINDOW_WIDTH,0);
 #endif
 				break;
 			}

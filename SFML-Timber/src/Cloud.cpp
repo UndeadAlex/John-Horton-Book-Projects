@@ -31,7 +31,7 @@ void Cloud::Update(sf::Time& deltaTime)
 	this->SetPosition(tempPos);
 
 	// Has the be reached the left of the screen?
-	if (this->GetPosition().x > GameConstants::gWindowWidth)
+	if (this->GetPosition().x > GameConstants::WINDOW_WIDTH)
 	{
 		this->Init();
 	}
