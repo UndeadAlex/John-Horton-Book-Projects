@@ -18,7 +18,7 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Bat.cpp">
+    <ClCompile Include="src\Paddle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Ball.cpp">
@@ -32,7 +32,7 @@
     <ClInclude Include="src\GameRandom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Bat.h">
+    <ClInclude Include="src\Paddle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Ball.h">

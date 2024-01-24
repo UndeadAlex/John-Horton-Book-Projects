@@ -89,14 +89,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Ball.cpp" />
-    <ClCompile Include="src\Bat.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Paddle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Ball.h" />
-    <ClInclude Include="src\Bat.h" />
     <ClInclude Include="src\GameConstants.h" />
     <ClInclude Include="src\GameRandom.h" />
+    <ClInclude Include="src\Paddle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
