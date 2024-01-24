@@ -20,11 +20,12 @@ public:
 	void Update(sf::Time& deltaTime);
 
 private:
+	void ConstrainToBounds();
 
 	int mInputDir = 0;
 
-	sf::Keyboard::Key mMoveKeyDown;
-	sf::Keyboard::Key mMoveKeyUp;
+	sf::Keyboard::Key mMoveKeyUp = sf::Keyboard::W;
+	sf::Keyboard::Key mMoveKeyDown = sf::Keyboard::S;
 };
 
 #endif

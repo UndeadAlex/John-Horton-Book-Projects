@@ -155,7 +155,7 @@ int WinMain()
 #endif
 
 	// Position the text
-	GameConstants::centreTextOrigin(messageText);
+	GameConstants::CentreTextOrigin(messageText);
 	messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
 	scoreText.setPosition(20, 20);
 
@@ -284,7 +284,7 @@ int WinMain()
 					// Change the message shown to the player
 					messageText.setString("Out of time!!\nPress ENTER to continue!");
 					//Reposition the text based on its new size
-					GameConstants::centreTextOrigin(messageText);
+					GameConstants::CentreTextOrigin(messageText);
 					messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
 
 					AudioManager::GetAudio("out_of_time")->play();
@@ -391,7 +391,7 @@ int WinMain()
 					playerSprite.setPosition(2000, 660);
 
 					messageText.setString("SQUISHED!!");
-					GameConstants::centreTextOrigin(messageText);
+					GameConstants::CentreTextOrigin(messageText);
 					messageText.setPosition(GameConstants::WINDOW_WIDTH / 2, GameConstants::WINDOW_HEIGHT / 2);
 
 					AudioManager::GetAudio("death")->play();

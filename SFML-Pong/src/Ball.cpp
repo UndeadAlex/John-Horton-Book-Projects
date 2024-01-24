@@ -1,4 +1,6 @@
 #include "Ball.h"
+#include "GameConstants.h"
+#include "GameRandom.h"
 
 Ball::Ball() : mVelocity(0, 0)
 {
@@ -21,5 +23,26 @@ Ball::~Ball()
 
 void Ball::Update(sf::Time& deltaTime)
 {
+	sf::Vector2f tmpPos = this->getPosition();
 
+	tmpPos += mVelocity * (GameConstants::BALL_SPEED * deltaTime.asSeconds());
+	
+	this->setPosition(tmpPos);
+}
+
+void Ball::Serve(bool left)
+{
+	sf::Vector2f screenCenter = sf::Vector2f(GameConstants::WINDOW_WIDTH / 2, GameConstants::WINDOW_HEIGHT / 2);
+	this->setPosition(screenCenter);
+
+	float randomYVelocity = GameRandom::RandFloat(-0.25f, 0.25f);
+	mVelocity = left ? sf::Vector2f(-1, randomYVelocity) : sf::Vector2f(1, randomYVelocity);
+	GameConstants::NormalizeVector2f(mVelocity);
+}
+
+void Ball::Bounce()
+{
+	mVelocity.x = -mVelocity.x;
+	//mVelocity.y = GameRandom::RandFloat(-0.25f, 0.25f);
+	GameConstants::NormalizeVector2f(mVelocity);
 }

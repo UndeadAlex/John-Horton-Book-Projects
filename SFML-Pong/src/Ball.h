@@ -13,6 +13,10 @@ public:
 
 	void Update(sf::Time& deltaTime);
 
+	// Left means serve to left side, if false serve to right
+	void Serve(bool left);
+	void Bounce();
+
 private:
 	sf::Vector2f mVelocity;
 };

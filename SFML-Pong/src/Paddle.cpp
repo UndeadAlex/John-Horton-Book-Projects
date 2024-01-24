@@ -4,8 +4,8 @@
 Paddle::Paddle()
 {
 	this->setPosition(0, 0);
-	this->setSize(sf::Vector2f(100, 10));
-	this->setOrigin(50,5);
+	this->setSize(sf::Vector2f(10, 100));
+	this->setOrigin(5,50);
 }
 
 Paddle::Paddle(int x, int y, int width, int height)
@@ -29,18 +29,12 @@ Paddle::~Paddle()
 
 void Paddle::SetupControls(const sf::Keyboard::Key upKey, const sf::Keyboard::Key downKey)
 {
-
+	mMoveKeyUp = upKey;
+	mMoveKeyDown = downKey;
 }
 
 void Paddle::HandleEvents(const sf::Event& e)
 {
-	// Didn't call Setup controls or it was somehow invalid.
-	if (!mMoveKeyDown || !mMoveKeyUp)
-	{
-		mMoveKeyUp = sf::Keyboard::W;
-		mMoveKeyDown = sf::Keyboard::S;
-	}
-
 	if (e.type == sf::Event::KeyPressed)
 	{
 		if (e.key.code == mMoveKeyUp)
@@ -61,6 +55,18 @@ void Paddle::Update(sf::Time& deltaTime)
 	tmpPos.y = tmpPos.y + (mInputDir * GameConstants::PADDLE_SPEED) * deltaTime.asSeconds();
 
 	// TODO: Check for boundaries
+
+	this->setPosition(tmpPos);
+	ConstrainToBounds();
+}
+
+void Paddle::ConstrainToBounds()
+{
+	sf::Vector2f tmpPos = this->getPosition();
+	if (tmpPos.y < this->getSize().y / 2)
+		tmpPos.y = this->getSize().y / 2;
+	else if (tmpPos.y > GameConstants::WINDOW_HEIGHT - this->getSize().y / 2)
+		tmpPos.y = GameConstants::WINDOW_HEIGHT - this->getSize().y / 2;
 
 	this->setPosition(tmpPos);
 }

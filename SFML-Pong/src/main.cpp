@@ -19,8 +19,7 @@
 #include "GameConstants.h"
 #include "GameRandom.h"
 
-#include "Paddle.h"
-#include "Ball.h"
+#include "GameManager.h"
 
 // enum is in charge of what states the game can be in.
 // Start, Playing, End. as i don't need a complex state system for Pong.
@@ -44,24 +43,10 @@ int WinMain()
 
 	//GameState gameState = GameState::START;
 
-	sf::Font DigiFont;
-	if (!DigiFont.loadFromFile("assets/fonts/DS-DIGI.TTF")) { printf("Failed to load font."); }
+	GameManager gameManager(mainWindow);
+	gameManager.Init();
 
-	Paddle playerOne(32, GameConstants::WINDOW_HEIGHT/2, 10,100);
-	playerOne.SetupControls(sf::Keyboard::W, sf::Keyboard::S);
-
-	Ball ball(GameConstants::WINDOW_WIDTH/2, GameConstants::WINDOW_HEIGHT/2, 10);
-
-	int playerOneScore = 0, playerTwoScore = 0;
-
-	sf::Text playerOneScoreText("0", DigiFont, 128);
-	sf::Text playerTwoScoreText("0", DigiFont, 128);
-	GameConstants::CentreTextOrigin(playerOneScoreText);
-	GameConstants::CentreTextOrigin(playerTwoScoreText);
-
-	playerOneScoreText.setPosition(GameConstants::PLAYERONESCORE_TEXTOFFSET, 64);
-	playerTwoScoreText.setPosition(GameConstants::PLAYERTWOSCORE_TEXTOFFSET, 64);
-
+	// the dividing line in the middle of the screen because it looks cool ?
 	sf::RectangleShape dividingLine(sf::Vector2f(GameConstants::WINDOW_WIDTH * 0.01f, GameConstants::WINDOW_HEIGHT));
 	dividingLine.setOrigin(dividingLine.getSize().x / 2, 0);
 	dividingLine.setPosition(GameConstants::WINDOW_WIDTH / 2, 0);
@@ -88,14 +73,12 @@ int WinMain()
 			}
 
 			// Pass event to Paddles
-			playerOne.HandleEvents(event);
+			gameManager.HandleEvents(event);
 		}
 
 		// Update Loop.
 		{
-			ball.Update(dt);
-
-			playerOne.Update(dt);
+			gameManager.Update(dt);
 		}
 
 		// Render Loop.
@@ -106,16 +89,7 @@ int WinMain()
 			// Draw middle line
 			mainWindow.draw(dividingLine);
 
-			// Draw Scores
-			mainWindow.draw(playerOneScoreText);
-			mainWindow.draw(playerTwoScoreText);
-
-			// Draw the ball
-			mainWindow.draw(ball);
-
-			// Draw the players
-			mainWindow.draw(playerOne);
-
+			gameManager.Render();
 
 			// Finish drawing.
 			mainWindow.display();
