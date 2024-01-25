@@ -7,28 +7,35 @@
 namespace GameConstants
 {
 	// Its important for easiness to keep this as a 1:1 aspect ratio.
-	constexpr int gWindowWidth = 1024;
-	constexpr int gWindowHeight = 1024;
-
-	constexpr int CELL_RES = 8;
-	constexpr int CELL_SIZE = std::min(gWindowWidth, gWindowHeight) / CELL_RES;
+	constexpr int WINDOW_WIDTH = 1920;
+	constexpr int WINDOW_HEIGHT = 1080;
 
 	// set the origin of the text to the centre of it
-	static void centreTextOrigin(sf::Text& pText)
+	// localBounds needs drawable, setOrigin is transformable, so i cant see a common parent to make this one universal function, the best i can do is shape.
+	static void CentreTextOrigin(sf::Text& text)
 	{
-		pText.setOrigin(pText.getGlobalBounds().width / 2, 0);
+		text.setOrigin(text.getLocalBounds().getSize() / 2.0f);
 	}
 
-	static sf::Vector2f roundVector2f(const sf::Vector2f pVector2f)
+	static void CentreShapeOrigin(sf::Shape& shape)
+	{
+		shape.setOrigin(shape.getLocalBounds().getSize() / 2.0f);
+	}
+
+	static sf::Vector2f RoundVector2f(const sf::Vector2f pVector2f)
 	{
 		return sf::Vector2f(std::round(pVector2f.x), std::round(pVector2f.y));
 	}
 
-	static sf::Font getFFFForwardFont()
+	static float GetVector2fMagnitude(const sf::Vector2f vec2f)
 	{
-		sf::Font font;
-		font.loadFromFile("assets/fonts/FFFFORWA.TTF");
-		return font;
+		return sqrt(pow(vec2f.x, 2.0f) + pow(vec2f.y, 2.0f));
+	}
+
+	static sf::Vector2f NormalizeVector2f(sf::Vector2f& vec2f)
+	{
+		vec2f /= GetVector2fMagnitude(vec2f);
+		return vec2f;
 	}
 }
 

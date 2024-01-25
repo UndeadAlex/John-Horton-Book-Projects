@@ -15,7 +15,7 @@ public:
 
 	// Left means serve to left side, if false serve to right
 	void Serve(bool left);
-	void Bounce();
+	void Bounce(bool isPaddle);
 
 private:
 	sf::Vector2f mVelocity;

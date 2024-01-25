@@ -55,15 +55,19 @@ void GameManager::Update(sf::Time& deltaTime)
 
 	// TODO: Check if ball is overlapping paddle, if not then check its x position to see if win condition is true.
 	if (mPaddleOne.getGlobalBounds().intersects(mBall.getGlobalBounds()))
-		mBall.Bounce();
+		mBall.Bounce(true);
 	else if (mPaddleTwo.getGlobalBounds().intersects(mBall.getGlobalBounds()))
-		mBall.Bounce();
+		mBall.Bounce(true);
 
-	float ballX = mBall.getPosition().x;
-	if (ballX > GameConstants::WINDOW_WIDTH)
+	sf::Vector2f ballPos = mBall.getPosition();
+	if (ballPos.x > GameConstants::WINDOW_WIDTH)
 		AwardScoreToPlayer(true);
-	else if (ballX < 0)
+	else if (ballPos.x < 0)
 		AwardScoreToPlayer(false);
+	else if (ballPos.y > GameConstants::WINDOW_HEIGHT)
+		mBall.Bounce(false);
+	else if (ballPos.y < 0)
+		mBall.Bounce(false);
 }
 
 void GameManager::Render()

@@ -10,9 +10,6 @@ namespace GameConstants
 	constexpr int gWindowWidth = 1024;
 	constexpr int gWindowHeight = 1024;
 
-	constexpr int CELL_RES = 8;
-	constexpr int CELL_SIZE = std::min(gWindowWidth, gWindowHeight) / CELL_RES;
-
 	// set the origin of the text to the centre of it
 	static void centreTextOrigin(sf::Text& pText)
 	{

@@ -35,14 +35,21 @@ void Ball::Serve(bool left)
 	sf::Vector2f screenCenter = sf::Vector2f(GameConstants::WINDOW_WIDTH / 2, GameConstants::WINDOW_HEIGHT / 2);
 	this->setPosition(screenCenter);
 
-	float randomYVelocity = GameRandom::RandFloat(-0.25f, 0.25f);
+	float randomYVelocity = GameRandom::RandFloat(-0.5f, 0.5f);
 	mVelocity = left ? sf::Vector2f(-1, randomYVelocity) : sf::Vector2f(1, randomYVelocity);
 	GameConstants::NormalizeVector2f(mVelocity);
 }
 
-void Ball::Bounce()
+void Ball::Bounce(bool isPaddle)
 {
-	mVelocity.x = -mVelocity.x;
-	//mVelocity.y = GameRandom::RandFloat(-0.25f, 0.25f);
-	GameConstants::NormalizeVector2f(mVelocity);
+	if (isPaddle)
+	{
+		mVelocity.x = -mVelocity.x;
+		//mVelocity.y = GameRandom::RandFloat(-0.25f, 0.25f);
+		GameConstants::NormalizeVector2f(mVelocity);
+	}
+	else
+	{
+		mVelocity.y = -mVelocity.y;
+	}
 }
